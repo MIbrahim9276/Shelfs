@@ -1,19 +1,25 @@
 // Includes
-#include <ncurses.h>
+#include <window.h>
 
 int main() {
-  // Intialize ncurses
-  initscr();
+  // Start the window
+  Window win;
 
-  // Enable character-a-time
-  // Disable echoing
-  // Capture special characters
-  cbreak();
-  noecho();
-  keypad(stdscr, true);
+  // Main loop
+  while (win.PollEvents() != 27) {
+    // Clear window
+    win.clean();
 
-  // Restore terminal settings
-  endwin();
+    /*
+    Main Loop Content
+    */
+
+    // Update the window
+    win.Update();
+  }
+  
+  // Exit the window
+  win.Terminate();
 
   return 0;
 }

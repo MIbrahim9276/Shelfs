@@ -1,8 +1,10 @@
 EXECUTABLE = bin/run
 SOURCES = main.cpp
 
+LIBS = -lncurses
+
 exec: $(SOURCES)
-	g++ $(SOURCES) -o $(EXECUTABLE)
+	g++ $(LIBS) $(SOURCES) -o $(EXECUTABLE)
 
 clean:
 	rm -f $(EXECUTABLE)

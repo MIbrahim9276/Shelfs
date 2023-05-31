@@ -1,11 +1,13 @@
-#pragma once
 #include <ncurses.h>
 
 class Window {
+
+  private:
+    WINDOW* _window;
+    int _y, _x, _height, _width;
+
   public:
-    Window();
-    void Update();
-    char PollEvents();
-    void Terminate();
-    void clean();
+    Window(int y, int x, int width, int height);
+    void Draw();
+    void Close();
 };

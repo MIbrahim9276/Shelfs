@@ -1,25 +1,19 @@
 #include <window.h>
 
-Window::Window() {
-  // Intialize ncurses
-  initscr();
+Window::Window(int y, int x, int width, int height): 
+  _y(y), _x(x), _height(height), _width(width) {
+    
+    _window = newwin(_height, _width, _y, _x);
 
-  // Disable echoing
-  noecho();
 }
 
-void Window::clean() {
-  clear();
+void Window::Draw() {
+  box(_window, '|', '-');
+  touchwin(_window);
+  wrefresh(_window);
 }
 
-void Window::Update() {
-  refresh();
-}
-
-char Window::PollEvents() {
-  return getch();
-}
-
-void Window::Terminate() {
+void Window::Close() {
+  delwin(_window);
   endwin();
 }

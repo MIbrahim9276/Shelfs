@@ -1,7 +1,6 @@
 #include <ncurses.h>
 
 class Window {
-
   private:
     int _y, _x, _height, _width;
 

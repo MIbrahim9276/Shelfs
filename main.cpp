@@ -10,10 +10,6 @@ int main() {
   Window book_window(0, 0, screen_w * 3 / 4, screen_h);
 
   Library lib(0, screen_w * 3 / 4, screen_w / 4, screen_h);
-  Book dumpy("/pussy");
-  lib.AddBook(dumpy);
-  Book bitch("/dicks");
-  lib.AddBook(bitch);
 
   lib.Display();
 

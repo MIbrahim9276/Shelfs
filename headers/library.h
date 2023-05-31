@@ -3,7 +3,6 @@
 #include <book.h>
 
 class Library {
-
   public:
     std::map<int, std::string> shop;
     Window window;

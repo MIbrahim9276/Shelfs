@@ -4,11 +4,10 @@
             "name": "Linux",
             "includePath": [
                 "${default}",
-                "./headers"
+                "headers"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/gcc",
-            "configurationProvider": "ms-vscode.makefile-tools"
+            "compilerPath": "/usr/bin/clang"
         }
     ],
     "version": 4

@@ -7,15 +7,17 @@ int main() {
   int screen_h, screen_w;
   getmaxyx(stdscr, screen_h, screen_w);
 
-  Window lib_window(0, screen_w * 3 / 4, screen_w / 4, screen_h);
   Window book_window(0, 0, screen_w * 3 / 4, screen_h);
 
-  lib_window.Draw();
-  book_window.Draw();
+  Library lib(0, screen_w * 3 / 4, screen_w / 4, screen_h);
+  lib.Display();
 
-  getchar();
+  while (getchar() != ESC) {
+    lib.Display();
+    book_window.Draw();
+  }
 
-  lib_window.Close();
+  lib.window.Close();
   book_window.Close();
 
   return 0;

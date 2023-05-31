@@ -1,19 +1,25 @@
 #include <window.h>
 
+Window::Window() {}
+
 Window::Window(int y, int x, int width, int height): 
   _y(y), _x(x), _height(height), _width(width) {
     
-    _window = newwin(_height, _width, _y, _x);
+    window = newwin(_height, _width, _y, _x);
 
 }
 
 void Window::Draw() {
-  box(_window, '|', '-');
-  touchwin(_window);
-  wrefresh(_window);
+  box(window, '|', '-');
+  touchwin(window);
+  wrefresh(window);
+}
+
+void Window::Update() {
+  wrefresh(window);
 }
 
 void Window::Close() {
-  delwin(_window);
+  delwin(window);
   endwin();
 }

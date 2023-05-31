@@ -7,7 +7,8 @@
                 "./headers"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/gcc"
+            "compilerPath": "/usr/bin/gcc",
+            "configurationProvider": "ms-vscode.makefile-tools"
         }
     ],
     "version": 4

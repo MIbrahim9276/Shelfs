@@ -1,12 +1,13 @@
 #include <string>
+#include <window.h>
+#include <fstream>
 
 class Book {
-  private:
-    std::string path;
-  
   public:
-    int id;
-    std::string title;
+    std::string title, path;
+
+    static void Display(Window& window, std::string filepath);
+    static std::string readFile(std::string path);
 
     Book(std::string path);
 };
